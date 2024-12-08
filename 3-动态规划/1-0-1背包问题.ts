@@ -27,4 +27,4 @@ function knapsackDFS(wgt: number[], val: number[], i: number, c: number):number 
 }
 
 
-console.log(knapsackDFS([10, 20, 30, 40, 50], [50, 120, 150, 210, 240], 5, 500));
+console.log(knapsackDFS([10, 20, 30, 40, 50], [50, 120, 150, 210, 240], 5, 50));
