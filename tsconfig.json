@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
-        "module": "ESNext"
+        "module": "ESNext",
+        "lib": ["ESNext","DOM"]
     },
     "ts-node": {
         "esm": true
