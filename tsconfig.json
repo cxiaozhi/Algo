@@ -1,9 +1,12 @@
 {
     "compilerOptions": {
         "module": "ESNext",
-        "lib": ["ESNext","DOM"]
+        "lib": ["ESNext","DOM"],
+        "esModuleInterop": true,
     },
     "ts-node": {
-        "esm": true
-    }
+        "esm": true,
+        "experimentalSpecifierResolution": "node"
+    },
+    "type":"modules"
 }
