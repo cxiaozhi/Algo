@@ -3,6 +3,7 @@ let nums1 = [-1,0,0,3,3,3,0,0,0],
 /**
  Do not return anything, modify nums1 in-place instead.
  力扣：https://leetcode.cn/problems/merge-sorted-array/submissions/586297756/
+ 最优解 用快慢指针
  */
 function merge(nums1: number[], m: number, nums2: number[], n: number): void {
     let j = 0
