@@ -22,3 +22,21 @@ n1.left = p
 
 // 删除p
 n1.left = p.left
+
+// 层序遍历 本质是广度优先搜索 借助队列实现
+function BFS(root:TNode | null):number[] {
+    const queue = [root]
+    const list:number[] = []
+    while (queue.length) {
+        let node = queue.shift() as TNode;
+        list.push(node.value)
+        if (node.left) {
+            queue.push(node.left)
+        }
+        if (node.right) {
+            queue.push(node.right)
+        }
+    }
+
+    return list
+}
