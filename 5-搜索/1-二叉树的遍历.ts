@@ -38,5 +38,5 @@ function BFS(root:TNode | null):number[] {
         }
     }
 
-    return list
+    return list // 遍历的结果
 }
