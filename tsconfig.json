@@ -3,10 +3,12 @@
         "module": "ESNext",
         "lib": ["ESNext","DOM"],
         "esModuleInterop": true,
+        "target": "ESNext"
     },
     "ts-node": {
         "esm": true,
         "experimentalSpecifierResolution": "node"
     },
-    "type":"modules"
+    "type":"modules",
+    
 }
