@@ -16,13 +16,13 @@ n2.left = n4
 n2.right = n5
 
 // 插入p
-const p = new TNode(0)
-p.left = n1.left
-n1.left = p
+// const p = new TNode(0)
+// p.left = n1.left
+// n1.left = p
 
 // 删除p
-n1.left = p.left
-
+// n1.left = p.left
+export {n1,TNode}
 // 层序遍历 本质是广度优先搜索 借助队列实现
 function BFS(root:TNode | null):number[] {
     const queue = [root]
