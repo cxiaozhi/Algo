@@ -116,7 +116,6 @@ class AVLTree {
         }
         this.updateHeight(node);
         node = this.rotate(node)
-
         return node
     }
 
