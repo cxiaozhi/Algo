@@ -2,10 +2,12 @@ class TNode {
     value: number;
     left: TNode | null;
     right: TNode | null;
-    constructor(val?: number, left?: TNode | null, right?: TNode | null) {
+    height:number;
+    constructor(val?: number, left?: TNode | null, right?: TNode | null,height?:number) {
         this.value = val === undefined ? 0 : val;
         this.left = left === undefined ? null : left;
         this.right = right === undefined ? null : right;
+        this.height = height === undefined ? null : height;
     }
 }
 
