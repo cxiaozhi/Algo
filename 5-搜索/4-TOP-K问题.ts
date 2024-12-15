@@ -1,11 +1,11 @@
 // 堆是一种满足特定条件的完全二叉树，小顶堆和大顶堆
 // 优先队列和堆看作等价的数据结构 对值进行取反 大小顶堆可以互换直接使用
-class Head {
+export class Head {
     maxHeap: number[];
-    constructor(nums:number[]) {
-        this.maxHeap = nums === undefined?[] :[...nums];
-        for (let index =this.parent(this.size()-1); index >= 0; index--) {
-            this.siftDown(index)
+    constructor(nums: number[]) {
+        this.maxHeap = nums === undefined ? [] : [...nums];
+        for (let index = this.parent(this.size() - 1); index >= 0; index--) {
+            this.siftDown(index);
         }
     }
 
@@ -60,30 +60,31 @@ class Head {
         if (this.isEmpty()) throw new RangeError("Heap is empty");
         this.swap(0, this.size() - 1);
         const val = this.maxHeap.pop();
-        this.siftDown(0)
-        return val
+        this.siftDown(0);
+        return val;
     }
     isEmpty(): boolean {
         return false;
     }
 
     // 从顶自底堆化
-    siftDown(i:number):void{
+    siftDown(i: number): void {
         while (true) {
-            const l = this.left(i),r = this.right(i);
+            const l = this.left(i),
+                r = this.right(i);
             let ma = i;
             if (l < this.size() && this.maxHeap[l] > this.maxHeap[ma]) {
-                ma = l
+                ma = l;
             }
             if (r < this.size() && this.maxHeap[r] > this.maxHeap[ma]) {
-                ma = r
+                ma = r;
             }
             if (ma === i) {
-                break
+                break;
             }
 
-            this.swap(i,ma)
-            i = ma
+            this.swap(i, ma);
+            i = ma;
         }
     }
 }
@@ -92,40 +93,39 @@ class Head {
  * 给定一个长度为 n 的无序数组 nums ，请返回数组中最大的 k 个元素。
  */
 // 元素入堆
-function pushMinHeap(maxHeap:Head,val:number):void {
+function pushMinHeap(maxHeap: Head, val: number): void {
     // 元素取反
-    maxHeap.push(-val)
+    maxHeap.push(-val);
 }
 
 // 元素出堆
-function popMinHeap(maxHeap:Head):number {
-    return -maxHeap.pop()    
+function popMinHeap(maxHeap: Head): number {
+    return -maxHeap.pop();
 }
 
 // 访问堆顶元素
-function peekMinHeap(maxHeap:Head) :number{
-    return -maxHeap.peek()
+function peekMinHeap(maxHeap: Head): number {
+    return -maxHeap.peek();
 }
 
 // 取出堆中元素
-function getMinHeap(maxHeap:Head) :number[]{
-    return maxHeap.maxHeap.map(num=>-num)
+function getMinHeap(maxHeap: Head): number[] {
+    return maxHeap.maxHeap.map((num) => -num);
 }
 
 // 基于堆查找数组中最大的K个元素
-function topKHeap(nums:number[],k:number):number[] {
+function topKHeap(nums: number[], k: number): number[] {
     // 初始化小顶堆
-    const maxHeap = new Head([])
-    for (let i = 0; i < k ; i++) {
-        pushMinHeap(maxHeap,nums[i])        
+    const maxHeap = new Head([]);
+    for (let i = 0; i < k; i++) {
+        pushMinHeap(maxHeap, nums[i]);
     }
     for (let i = k; i < nums.length; i++) {
         if (nums[i] > peekMinHeap(maxHeap)) {
             popMinHeap(maxHeap);
-            pushMinHeap(maxHeap,nums[i])
+            pushMinHeap(maxHeap, nums[i]);
         }
     }
 
-    return getMinHeap(maxHeap)
-    
+    return getMinHeap(maxHeap);
 }
