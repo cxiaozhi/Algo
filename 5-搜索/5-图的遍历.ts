@@ -179,7 +179,7 @@ function graphBFS(graph: GraphAdjList, startVet: Vertex): Vertex[] {
     const que = [startVet];
     while (que.length) {
         const vet = que.shift();
-        res.push(vet); // 广度优先遍历
+        res.push(vet); // 这里才是真正的遍历
         for (const adjVet of graph.adjList.get(vet)) {
             if (visited.has(adjVet)) continue;
             que.push(adjVet);
