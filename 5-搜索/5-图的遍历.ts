@@ -159,6 +159,7 @@ class GraphAdjList {
             for (const vertex of value) {
                 temp.push(vertex.val);
             }
+            console.log(key.val + ": " + temp.join());
         }
     }
 }
@@ -178,11 +179,9 @@ function graphBFS(graph: GraphAdjList, startVet: Vertex): Vertex[] {
     const que = [startVet];
     while (que.length) {
         const vet = que.shift();
-        res.push(vet);
+        res.push(vet); // 广度优先遍历
         for (const adjVet of graph.adjList.get(vet)) {
-            if (visited.has(adjVet)) {
-                continue;
-            }
+            if (visited.has(adjVet)) continue;
             que.push(adjVet);
             visited.add(adjVet);
         }
@@ -193,4 +192,18 @@ function graphBFS(graph: GraphAdjList, startVet: Vertex): Vertex[] {
 /**
  * 深度优先遍历
  */
-function graphDFS() {}
+function dfs(graph: GraphAdjList, visited: Set<Vertex>, res: Vertex[], vet: Vertex) {
+    res.push(vet); // 记录访问顶点
+    visited.add(vet);
+    for (const adjVet of graph.adjList.get(vet)) {
+        if (visited.has(adjVet)) continue;
+        dfs(graph, visited, res, adjVet);
+    }
+}
+
+function graphDFS(graph: GraphAdjList, startVet: Vertex): Vertex[] {
+    const res: Vertex[] = [];
+    const visited: Set<Vertex> = new Set();
+    dfs(graph, visited, res, startVet);
+    return res;
+}
