@@ -1,3 +1,3 @@
 /**
- * 力扣：
+ * 力扣：https://github.com/sisterAn/JavaScript-Algorithms/issues/20
  */
