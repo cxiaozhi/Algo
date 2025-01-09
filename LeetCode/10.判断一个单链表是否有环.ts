@@ -2,7 +2,7 @@ import { ListNode } from "./9.合并两个有序链表"
 
 /**
  * 力扣：https://leetcode.cn/problems/linked-list-cycle/description/
- * 思路：双指针，有一个快指针 和 慢指针，慢指针每次走一步，快指针每次走两步，如有环，快慢指针会 相遇
+ * 思路：访问过的放入集合，然后循环的时候检测是否存在
  */
 function hasCycle(head: ListNode | null): boolean {
     let set = new Set()

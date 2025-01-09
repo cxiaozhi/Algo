@@ -31,8 +31,8 @@ let lnode3 = new ListNode(4);
 let lnode2 = new ListNode(3, lnode3);
 let lnode1 = new ListNode(1, lnode2);
 
-let node = mergeTwoLists(node1, lnode1)
-while (node) {
-    console.log(node.val);
-    node = node.next
-}
+// let node = mergeTwoLists(node1, lnode1)
+// while (node) {
+//     console.log(node.val);
+//     node = node.next
+// }
