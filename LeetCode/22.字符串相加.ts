@@ -2,7 +2,7 @@
  * 力扣：https://leetcode.cn/problems/add-strings/description/
  */
 
-function addStrings(num1: string, num2: string): string {
+export function addStrings(num1: string, num2: string): string {
     let pointOne = num1.length - 1;
     let pointTwo = num2.length - 1;
     let carryBit = 0
