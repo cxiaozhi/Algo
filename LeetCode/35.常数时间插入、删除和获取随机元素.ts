@@ -1,5 +1,6 @@
 /**
  * 力扣：https://leetcode.cn/problems/insert-delete-getrandom-o1/description/
+ * 可以通过用最后一个值来覆盖的形式删除，最后把最后弹出即可
  */
 
 class RandomizedSet {
