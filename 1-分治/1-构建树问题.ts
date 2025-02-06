@@ -27,4 +27,4 @@ function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
     return root;
 }
 
-console.log(buildTree([3, 9, 2, 1, 7], [9, 3, 1, 2, 7]));
+console.log(buildTree([-1], [-1]));
