@@ -1,12 +1,14 @@
 /**
  * 给定一棵二叉树的前序遍历 preorder 和中序遍历 inorder ，请从中构建二叉树，返回二叉树的根节点。假设二叉树中没有值重复的节点（如图 12-5 所示）。
  */
-class TreeNode {
+export class TreeNode {
     left: TreeNode;
     right: TreeNode;
     val: number;
-    constructor(parameters: number) {
-        this.val = parameters;
+    constructor(val?: number,left?:TreeNode,right?:TreeNode) {
+        this.val = val;
+        this.left = left ? left : null
+        this.right = right ? right : null
     }
 }
 function dfs(preorder: number[], inorderMap: Map<number, number>, i: number, l: number, r: number) {
@@ -27,4 +29,4 @@ function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
     return root;
 }
 
-console.log(buildTree([-1], [-1]));
+// console.log(buildTree([-1], [-1]));
