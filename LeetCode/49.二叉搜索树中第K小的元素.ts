@@ -9,13 +9,12 @@ function kthSmallest(root: TreeNode | null, k: number): number {
     function dfs(root: TreeNode | null) {
         if (!root) return;
         dfs(root.left);
-        dfs(root.right);
         count++;
-        console.log(count);
         if (count == k) {
             tart = root.val;
             return;
         }
+        dfs(root.right);
     }
     dfs(root);
     return tart;
