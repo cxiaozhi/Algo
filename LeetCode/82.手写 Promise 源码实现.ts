@@ -1,3 +1,3 @@
 /**
- * 力扣: https://leetcode.cn/problems/generate-parentheses/description/
+ * 力扣: https://github.com/sisterAn/JavaScript-Algorithms/issues/85
  */
